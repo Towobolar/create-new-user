@@ -22,11 +22,11 @@ jobs:
 
       
       - name: Terraform Init
-        run: terraform init create-user
+        run: terraform init -chdir=create-user
 
       # - name: Terraform plan
       #   run: terraform plan -input=false
       
       - name: Terraform Apply
-        run: terraform apply -auto-approve create-user
+        run: terraform apply -auto-approve -chdir=create-user
 
