@@ -20,9 +20,9 @@ jobs:
         with:
           cli_config_credentials_token: ${{ secrets.tfc_team_token }}
 
-      - name: pwd
+      - name: cd
         run: |
-            pwd
+            cd create-iam-user/
       
       - name: Terraform Init
         run: terraform init
