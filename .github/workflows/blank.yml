@@ -25,7 +25,7 @@ jobs:
             cd create-iam-user/
       
       - name: Terraform Init
-        run: terraform init -chdir=create-iam-user
+        run: terraform init
 
       # - name: Terraform plan
       #   run: terraform plan -input=false
