@@ -16,6 +16,6 @@ provider "aws" {
 }
 
 
-resource "aws_iam_user" "Tipson007" {
-    name = "Tipson007"
+resource "aws_iam_user" "Abiodun" {
+    name = "Abiodun"
 }
