@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'create-user/**'
-
 
 jobs:
   terraform:
@@ -21,17 +18,13 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           cli_config_credentials_token: ${{ secrets.tfc_team_token }}
-
-      - name: change directory
-        run: |
-            cd create-user
-
+      
       - name: Terraform Init
         run: terraform init
 
-      # - name: Terraform plan
-      #   run: terraform plan -input=false
+      - name: Terraform plan
+        run: terraform plan -input=false
       
       - name: Terraform Apply
-        run: terraform apply -auto-approve 
+        run: terraform apply -auto-approve
 
