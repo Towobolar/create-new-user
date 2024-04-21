@@ -27,9 +27,9 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      # - name: Terraform plan
-      #   run: terraform plan -input=false
+      - name: Terraform plan
+        run: terraform plan -input=false
       
       - name: Terraform Apply
-        run: terraform apply -auto-approve -chdir=create-iam-user
+        run: terraform apply -auto-approve
 
