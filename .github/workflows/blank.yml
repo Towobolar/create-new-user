@@ -3,7 +3,7 @@ name: Create AWS IAM User
 on:
   push:
       paths: 
-      - 'create-iam-user/' # Trigger only when changes are made in the create-user directory
+      - 'create-iam-user/main.tf' # Trigger only when changes are made in the create-user directory
 
 
 jobs:
