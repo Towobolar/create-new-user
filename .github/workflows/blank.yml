@@ -13,10 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
+    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.0.0
+          cli_config_credentials_token: ${{ secrets.tfc_team_token }}
 
       - name: pwd
         run: |
@@ -30,7 +31,4 @@ jobs:
       
       - name: Terraform Apply
         run: terraform apply -auto-approve
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
