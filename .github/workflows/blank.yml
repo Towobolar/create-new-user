@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+      path: 
+      - 'create-iam-user/' # Trigger only when changes are made in the create-user directory
+
 
 jobs:
   terraform:
