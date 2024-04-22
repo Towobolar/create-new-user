@@ -1,11 +1,15 @@
+# pr:
+# - '*'
 name: Create AWS IAM User
 
 on:
   push:
     branches:
       - main
+      
 
 jobs:
+  # condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
   terraform:
     name: Terraform
     runs-on: ubuntu-latest
@@ -26,8 +30,9 @@ jobs:
         run: terraform plan -input=false
       
       - name: Terraform Apply
+        if:  github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
 
-      - name: Terraform destroy
-        run: terraform destroy -auto-approve
+      # - name: Terraform destroy
+      #   run: terraform destroy -auto-approve
 
