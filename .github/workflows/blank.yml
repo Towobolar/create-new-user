@@ -5,12 +5,15 @@ on:
     branches:
       - feature/test
   pull_request:
+env: 
+  name: dev
     
 
 jobs:
   terraform:
     name: Terraform
     runs-on: ubuntu-latest
+
     defaults:
      run:
       shell: bash
@@ -33,6 +36,9 @@ jobs:
       
     - name: Terraform Plan
       run: terraform plan
+
+    - name: print env name
+      run: echo  ${{ env.name }}
       
     - name: Terraform Apply
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/feature/test' }}
