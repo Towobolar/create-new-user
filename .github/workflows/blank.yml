@@ -2,7 +2,7 @@
 name: 'Terraform'
 on: 
   push:
-    branches: [ "feature/test-pipeline" ]
+    branches: [ "feature/test" ]
   pull_request:
 
 permissions:
