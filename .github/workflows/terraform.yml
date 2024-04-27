@@ -12,12 +12,12 @@ jobs:
   terraform:
     name: Terraform
     runs-on: ubuntu-latest
-  defaults:
+    defaults:
      run:
-  shell: bash
-  working-directory: ./scripts
+      shell: bash
+      working-directory: ./scripts
     
-     steps:
+    steps:
     - name: Checkout repository
       uses: actions/checkout@v2
       
